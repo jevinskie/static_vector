@@ -944,7 +944,11 @@ namespace std
             {
                 if (FCV_UNLIKELY(pos >= size()))
                 {
+                    #ifdef __EXCEPTIONS
                     throw out_of_range("fixed_capacity_vector::at");
+                    #else
+                    FCV_ASSERT(!"out_of_range(\"fixed_capacity_vector::at\")");
+                    #endif
                 }
                 return fcv_detail::index(*this, pos);
             }
@@ -955,7 +959,11 @@ namespace std
             {
                 if (FCV_UNLIKELY(pos >= size()))
                 {
+                    #ifdef __EXCEPTIONS
                     throw out_of_range("fixed_capacity_vector::at");
+                    #else
+                    FCV_ASSERT(!"out_of_range(\"fixed_capacity_vector::at\")");
+                    #endif
                 }
                 return fcv_detail::index(*this, pos);
             }
