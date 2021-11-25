@@ -596,7 +596,7 @@ namespace std
 
                     using aligned_storage_t
                         = aligned_storage_t<sizeof(remove_const_t<T>),
-                                            alignof(remove_const_t<T>)>;
+                                            alignof(remove_const_t<T>)>::type;
                     using data_t = conditional_t<!Const<T>, aligned_storage_t,
                                                  const aligned_storage_t>;
                     alignas(alignof(T)) data_t data_[Capacity]{};
