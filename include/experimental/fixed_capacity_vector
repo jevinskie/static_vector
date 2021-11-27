@@ -125,8 +125,8 @@ namespace std
             template <class = void>
             [[noreturn]] void assert_failure(char const* file, int line,
                                              char const* msg) {
-                fprintf(stderr, "%s(%d): %s\n", file, line, msg);
-                abort();
+                printf("%s(%d): %s\n", file, line, msg);
+                assert(!"fcv assert_failure");
             }
 
             template <bool v>
