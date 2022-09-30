@@ -85,7 +85,7 @@
 
 /// Expect asserts the condition in debug builds and assumes the condition to be
 /// true in release builds.
-#ifdef NDEBUG
+#ifdef FCV_NDEBUG
 #define FCV_EXPECT(EXPR) FCV_ASSUME(EXPR)
 #else
 #define FCV_EXPECT(EXPR) FCV_ASSERT(EXPR)
